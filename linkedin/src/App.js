@@ -1,12 +1,18 @@
 import './App.css';
 import Navbar from './components/Navbar';
-import navbar from './components/Navbar';
+import {useState} from 'react'
+import Main from './components/Main'
 
 function App() {
+
+  const [content, setContent] = useState('Home');
+
   return (
-    <div className="App">
+    <div className="App" style={{paddingTop: 52}}>
    
-    <Navbar/>
+    <Navbar content={content} setContent = {setContent}/>
+    <Main content={content}/>
+
     </div>
   );
 }
